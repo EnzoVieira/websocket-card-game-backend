@@ -15,7 +15,7 @@ class CreateGameUseCase {
 
     socket.join(tableId)
 
-    socket.to(tableId).emit("join-player", socket.id)
+    socket.to(tableId).emit("card:join-player", socket.id)
 
     const gameAlreadyExists = this.gamesRepository.findGameById(tableId)
 
@@ -24,7 +24,7 @@ class CreateGameUseCase {
     } else {
       const cards = this.gamesRepository.getCards(gameAlreadyExists)
 
-      socket.emit("receive-cards", cards)
+      socket.emit("card:receive-cards", cards)
     }
   }
 }

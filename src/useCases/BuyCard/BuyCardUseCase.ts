@@ -25,7 +25,7 @@ class BuyCardUseCase {
 
     this.gamesRepository.postLastCard(game, card)
 
-    socket.emit("receive-card", card)
+    socket.emit("card:receive-card", card)
   }
 }
 

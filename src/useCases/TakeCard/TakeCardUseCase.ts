@@ -18,9 +18,9 @@ class TakeCardUseCase {
 
     const lastCard = this.gamesRepository.takeLastCard(game)
 
-    socket.to(tableId).emit("remove-last-card")
+    socket.to(tableId).emit("card:remove-last-card")
 
-    socket.emit("take-last-card", lastCard)
+    socket.emit("card:take-last-card", lastCard)
   }
 }
 

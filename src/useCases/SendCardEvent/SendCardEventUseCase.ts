@@ -11,8 +11,6 @@ class SendCardEventUseCase {
   ) {}
 
   execute(socket: Socket, tableId: string, cardId: string) {
-    console.log(`mandando uma CARTA para ${tableId}`)
-
     const gameAlreadyExists = this.gamesRepository.findGameById(tableId)
 
     if (!gameAlreadyExists) {
@@ -27,7 +25,7 @@ class SendCardEventUseCase {
 
     this.gamesRepository.postLastCard(gameAlreadyExists, card)
 
-    socket.to(tableId).emit("message", card)
+    socket.to(tableId).emit("card:message", card)
   }
 }
 
