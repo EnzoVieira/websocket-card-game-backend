@@ -1,8 +1,9 @@
 import { Socket } from "socket.io"
-import { BuyCardController } from "src/useCases/BuyCard/BuyCardController"
-import { CreateGameController } from "src/useCases/CreateGame/CreateGameController"
-import { SendCardEventController } from "src/useCases/SendCardEvent/SendCardEventController"
-import { TakeCardController } from "src/useCases/TakeCard/TakeCardController"
+
+import { BuyCardController } from "src/modules/card-game/useCases/BuyCard/BuyCardController"
+import { CreateGameController } from "src/modules/card-game/useCases/CreateGame/CreateGameController"
+import { SendCardEventController } from "src/modules/card-game/useCases/SendCardEvent/SendCardEventController"
+import { TakeCardController } from "src/modules/card-game/useCases/TakeCard/TakeCardController"
 
 const createGameController = new CreateGameController()
 const sendCardEventController = new SendCardEventController()
